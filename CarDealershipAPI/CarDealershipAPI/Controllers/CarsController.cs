@@ -18,9 +18,31 @@ namespace CarDealershipAPI.Controllers
         private CarDealershipAPIContext db = new CarDealershipAPIContext();
 
         // GET: api/Cars
-        public IQueryable<Car> GetCars()
+        //public IQueryable<Car> GetCars()
+        //{
+        //    return db.Cars;
+        //}
+
+        public List<Car> GetCars(int? year = null, string make = null, string model = null, string color = null)
         {
-            return db.Cars;
+            var cars = db.Cars.AsQueryable();
+            if(year.HasValue)
+            {
+                cars = cars.Where(x => x.Year == year);
+            }
+            if (!string.IsNullOrWhiteSpace(color))
+            {
+                cars = cars.Where(x => x.Color == color);
+            }
+            if (!string.IsNullOrWhiteSpace(model))
+            {
+                cars = cars.Where(x => x.Model == model);
+            }
+            if (!string.IsNullOrWhiteSpace(make))
+            {
+                cars = cars.Where(x => x.Make == make);
+            }
+            return cars.ToList();
         }
 
         // GET: api/Cars/5

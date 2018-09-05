@@ -1,0 +1,11 @@
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\CarDealership.Services.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\CarDealership.Services.pdb
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\CarDealershipAPI.Domain.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\RestSharp.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\CarDealershipAPI.Domain.pdb
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\bin\Debug\CarDealershipAPI.Domain.dll.config
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\obj\Debug\CarDealership.Services.csprojAssemblyReference.cache
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\obj\Debug\CarDealership.Services.csproj.CoreCompileInputs.cache
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\obj\Debug\CarDealership.Services.csproj.CopyComplete
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\obj\Debug\CarDealership.Services.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealership.Services\obj\Debug\CarDealership.Services.pdb
