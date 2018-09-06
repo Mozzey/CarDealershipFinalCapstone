@@ -21,11 +21,43 @@ namespace CarDealershipMVCProject.Clients
             _client = new RestClient(ConfigurationManager.AppSettings["CarApiBaseUri"]);
         }
 
-        public async Task<IEnumerable<CarViewModel>> GetCars()
+        public async Task<IEnumerable<Car>> GetCars()
         {
             var request = new RestRequest("Cars", Method.GET);
             var response = await _client.ExecuteTaskAsync(request);
-            return JsonConvert.DeserializeObject<IEnumerable<CarViewModel>>(response.Content);
+            return JsonConvert.DeserializeObject<IEnumerable<Car>>(response.Content);
+        }
+
+        public async Task<IEnumerable<Car>> SearchCars(string make, string model, int? year, string color)
+        {
+            var request = new RestRequest("Cars/Search", Method.GET);
+            request.Parameters.Add(new Parameter()
+            {
+                Name = "make",
+                Type = ParameterType.QueryString,
+                Value = make
+            });
+            request.Parameters.Add(new Parameter()
+            {
+                Name = "model",
+                Type = ParameterType.QueryString,
+                Value = model
+            });
+            request.Parameters.Add(new Parameter()
+            {
+                Name = "year",
+                Type = ParameterType.QueryString,
+                Value = year
+            });
+            request.Parameters.Add(new Parameter()
+            {
+                Name = "color",
+                Type = ParameterType.QueryString,
+                Value = color
+            });
+
+            var response = await _client.ExecuteTaskAsync(request);
+            return JsonConvert.DeserializeObject<IEnumerable<Car>>(response.Content);
         }
     }
 }

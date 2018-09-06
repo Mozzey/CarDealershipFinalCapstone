@@ -17,13 +17,14 @@ namespace CarDealershipAPI.Controllers
     {
         private CarDealershipAPIContext db = new CarDealershipAPIContext();
 
-        // GET: api/Cars
-        //public IQueryable<Car> GetCars()
-        //{
-        //    return db.Cars;
-        //}
-
-        public List<Car> GetCars(int? year = null, string make = null, string model = null, string color = null)
+        //GET: api/Cars
+        public IQueryable<Car> GetCars()
+        {
+            return db.Cars;
+        }
+        [HttpGet]
+        [Route("api/Cars/SearchCars")]
+        public IQueryable<Car> SearchCars(int? year = null, string make = null, string model = null, string color = null)
         {
             var cars = db.Cars.AsQueryable();
             if(year.HasValue)
@@ -42,7 +43,7 @@ namespace CarDealershipAPI.Controllers
             {
                 cars = cars.Where(x => x.Make == make);
             }
-            return cars.ToList();
+            return cars.OrderBy(X => X.Make);
         }
 
         // GET: api/Cars/5

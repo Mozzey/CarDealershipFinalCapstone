@@ -1,4 +1,5 @@
 ﻿using CarDealershipMVCProject.Clients;
+using CarDealershipMVCProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +13,21 @@ namespace CarDealershipMVCProject.Controllers
     {
         private readonly CarClient _client;
 
+        public CarsController()
+        {
+            _client = new CarClient();
+        }
+
         public async Task<ActionResult> GetCars()
         {
             var cars = await _client.GetCars();
             return View(cars);
         }
 
-        public CarsController()
+        public async Task<ActionResult> SearchCars(string make, string model, int? year, string color)
         {
-            _client = new CarClient();
+            var cars = await _client.SearchCars(make, model, year, color);
+            return View(cars);
         }
 
         // GET: Cars
@@ -28,6 +35,11 @@ namespace CarDealershipMVCProject.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public Task<ActionResult> Index(string make, string model, int? year, string color)
+        //{
+            
+        //}
 
         // GET: Cars/Details/5
         public ActionResult Details(int id)

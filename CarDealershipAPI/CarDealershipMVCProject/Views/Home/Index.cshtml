@@ -1,31 +1,101 @@
-﻿@{
+﻿@model CarDealershipAPI.Domain.Models.Car
+
+@{
     ViewBag.Title = "Home Page";
+
+    var makeItems = new List<SelectListItem>()
+{
+new SelectListItem
+{
+    Text = "Ford",
+    Value = "Ford"
+},
+new SelectListItem
+{
+    Text = "Chevy",
+    Value = "Chevy"
+},
+new SelectListItem
+{
+    Text = "GMC",
+    Value = "GMC"
+}
+};
+
+    var modelItems = new List<SelectListItem>()
+{
+new SelectListItem
+{
+    Text = "F150",
+    Value = "F150"
+},
+new SelectListItem
+{
+    Text = "F151",
+    Value = "F151"
+},
+new SelectListItem
+{
+    Text = "F152",
+    Value = "F152"
+}
+};
+
+    var colorItems = new List<SelectListItem>()
+{
+new SelectListItem
+{
+    Text = "Black",
+    Value = "Black"
+},
+new SelectListItem
+{
+    Text = "Blue",
+    Value = "Blue"
+},
+new SelectListItem
+{
+    Text = "Red",
+    Value = "Red"
+},
+new SelectListItem
+{
+    Text = "Silver",
+    Value = "Silver"
+}
+};
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
+<h1 class="text-center">GC Car Dealership</h1>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>View All Cars</h2>
+        <p>@Html.ActionLink("All Cars", "GetCars", "Cars", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-8">
+        <h2>Something for everyone!</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            @using (@Html.BeginForm("SearchCars", "Cars", FormMethod.Get))
+            {
+                <div class="row">
+                    @Html.DropDownListFor(model => model.Make, makeItems, "---SELECT MAKE---", new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <br />
+                <div class="row">
+                    @Html.DropDownListFor(model => model.Model, modelItems, "---SELECT MODEL---", new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <br />
+                <div class="row">
+                    @Html.DropDownListFor(model => model.Color, colorItems, "---SELECT COLOR---", new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <br />
+                <div class="row">
+                    @Html.EditorFor(phone => Model.Year)
+                </div>
+                <br />
+                <input type="submit" value="Search" />
+            }
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
