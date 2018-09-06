@@ -30,7 +30,7 @@ namespace CarDealershipMVCProject.Clients
 
         public async Task<IEnumerable<Car>> SearchCars(string make, string model, int? year, string color)
         {
-            var request = new RestRequest("Cars/Search", Method.GET);
+            var request = new RestRequest("Cars/SearchCars", Method.GET);
             request.Parameters.Add(new Parameter()
             {
                 Name = "make",
@@ -43,12 +43,16 @@ namespace CarDealershipMVCProject.Clients
                 Type = ParameterType.QueryString,
                 Value = model
             });
-            request.Parameters.Add(new Parameter()
+            if (year.HasValue)
             {
-                Name = "year",
-                Type = ParameterType.QueryString,
-                Value = year
-            });
+                request.Parameters.Add(new Parameter()
+                {
+                    Name = "year",
+                    Type = ParameterType.QueryString,
+                    Value = year
+                });
+            }
+            
             request.Parameters.Add(new Parameter()
             {
                 Name = "color",
@@ -57,7 +61,11 @@ namespace CarDealershipMVCProject.Clients
             });
 
             var response = await _client.ExecuteTaskAsync(request);
-            return JsonConvert.DeserializeObject<IEnumerable<Car>>(response.Content);
+            if(response.IsSuccessful)
+            {
+                return JsonConvert.DeserializeObject<IEnumerable<Car>>(response.Content);
+            }
+            throw new Exception(response.ErrorMessage);
         }
     }
 }
