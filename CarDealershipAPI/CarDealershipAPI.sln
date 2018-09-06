@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealershipAPI.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealershipMVCProject", "CarDealershipMVCProject\CarDealershipMVCProject.csproj", "{06551820-B4E4-4661-8D0F-ECC3BFFE200B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealershipMVC.Services", "CarDealershipMVC.Services\CarDealershipMVC.Services.csproj", "{0BB00237-5A91-466F-BA94-7E5F4B548B3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{06551820-B4E4-4661-8D0F-ECC3BFFE200B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06551820-B4E4-4661-8D0F-ECC3BFFE200B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06551820-B4E4-4661-8D0F-ECC3BFFE200B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB00237-5A91-466F-BA94-7E5F4B548B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB00237-5A91-466F-BA94-7E5F4B548B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB00237-5A91-466F-BA94-7E5F4B548B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB00237-5A91-466F-BA94-7E5F4B548B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

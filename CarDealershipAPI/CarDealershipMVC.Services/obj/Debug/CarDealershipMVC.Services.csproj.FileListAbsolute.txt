@@ -1,0 +1,6 @@
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\bin\Debug\CarDealershipMVC.Services.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\bin\Debug\CarDealershipMVC.Services.pdb
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\obj\Debug\CarDealershipMVC.Services.csprojAssemblyReference.cache
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\obj\Debug\CarDealershipMVC.Services.csproj.CoreCompileInputs.cache
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\obj\Debug\CarDealershipMVC.Services.dll
+C:\Users\Mozzey\GrandCircus\Capstones\CarDealership\CarDealershipAPI\CarDealershipMVC.Services\obj\Debug\CarDealershipMVC.Services.pdb
